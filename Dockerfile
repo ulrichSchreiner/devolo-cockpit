@@ -8,10 +8,9 @@ RUN dpkg --add-architecture i386 && \
 	lzma \
 	xz-utils
 
-ENV COCKPIT_VERSION=4-4
+ENV COCKPIT_VERSION=v5-0-2
 
-RUN curl -SL https://www.devolo.de/fileadmin/Web-Content/DE/Contentseiten/Downloads/Software/devolo-cockpit-v${COCKPIT_VERSION}-linux.run >/tmp/cockpit.run && \
-    chmod +x /tmp/cockpit.run
+RUN curl -SL https://www.devolo.de/fileadmin/Web-Content/DE/Contentseiten/Downloads/Cockpit/devolo-cockpit-${COCKPIT_VERSION}-linux.run >/tmp/cockpit.run && chmod +x /tmp/cockpit.run
 
 RUN /tmp/cockpit.run
 
