@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 RUN dpkg --add-architecture i386 && \
     apt update && \
@@ -8,9 +8,9 @@ RUN dpkg --add-architecture i386 && \
 	lzma \
 	xz-utils
 
-ENV COCKPIT_VERSION=v5-0-2
+ENV COCKPIT_VERSION=v5-1-2
 
-RUN curl -SL https://www.devolo.de/fileadmin/Web-Content/DE/Contentseiten/Downloads/Cockpit/devolo-cockpit-${COCKPIT_VERSION}-linux.run >/tmp/cockpit.run && chmod +x /tmp/cockpit.run
+RUN curl -SL https://www.devolo.de/fileadmin/Web-Content/DE/products/hnw/devolo-cockpit/software/devolo-cockpit-${COCKPIT_VERSION}-linux.run > /tmp/cockpit.run && chmod +x /tmp/cockpit.run
 
 RUN /tmp/cockpit.run
 
